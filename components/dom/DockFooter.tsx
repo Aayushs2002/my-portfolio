@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform, MotionValue } from 'framer-motion';
-import { Github, Linkedin, Twitter, Mail, Home, User, Code, Send } from 'lucide-react';
+import { Github, Linkedin, Twitter, Mail, Home, User, Code, Send, LucideIcon } from 'lucide-react';
 
 export default function DockFooter({ visible = true }: { visible?: boolean }) {
   const mouseX = useMotionValue(Infinity);
@@ -47,7 +47,7 @@ export default function DockFooter({ visible = true }: { visible?: boolean }) {
   );
 }
 
-function DockIcon({ mouseX, icon: Icon, href }: { mouseX: MotionValue; icon: React.ElementType; href: string }) {
+function DockIcon({ mouseX, icon: Icon, href }: { mouseX: MotionValue; icon: LucideIcon; href: string }) {
   const ref = useRef<HTMLAnchorElement>(null);
 
   const distance = useTransform(mouseX, (val) => {
@@ -65,7 +65,7 @@ function DockIcon({ mouseX, icon: Icon, href }: { mouseX: MotionValue; icon: Rea
       style={{ width }}
       className="aspect-square w-10 rounded-full bg-zinc-800 flex items-center justify-center hover:bg-zinc-700 border border-white/5"
     >
-      <Icon className="w-1/2 h-1/2 text-white" />
+      <Icon size={20} className="text-white" />
     </motion.a>
   );
 }

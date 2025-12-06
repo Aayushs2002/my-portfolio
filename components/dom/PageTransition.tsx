@@ -4,13 +4,19 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 export default function PageTransition() {
+  const [isMounted, setIsMounted] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsMounted(true);
     // Hide after initial load
     const timer = setTimeout(() => setIsLoading(false), 1000);
     return () => clearTimeout(timer);
   }, []);
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <AnimatePresence>

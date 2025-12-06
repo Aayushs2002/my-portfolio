@@ -10,6 +10,14 @@ import { ArrowRight, Sparkles, Code, Zap } from 'lucide-react';
 export default function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [dimensions, setDimensions] = useState({ width: 1920, height: 1080 });
+  const [particles, setParticles] = useState<Array<{
+    id: number;
+    x: number;
+    y: number;
+    size: number;
+    duration: number;
+    delay: number;
+  }>>([]);
   const sectionRef = useRef(null);
   
   const { scrollYProgress } = useScroll({
@@ -26,6 +34,18 @@ export default function Hero() {
     if (typeof window !== 'undefined') {
       setDimensions({ width: window.innerWidth, height: window.innerHeight });
     }
+
+    // Generate particles on client side only
+    setParticles(
+      Array.from({ length: 20 }, (_, i) => ({
+        id: i,
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        size: Math.random() * 4 + 2,
+        duration: Math.random() * 10 + 10,
+        delay: Math.random() * 5,
+      }))
+    );
 
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
@@ -49,16 +69,6 @@ export default function Hero() {
 
   const rotateX = useTransform(mouseY, [0, dimensions.height], [5, -5]);
   const rotateY = useTransform(mouseX, [0, dimensions.width], [-5, 5]);
-
-  // Floating particles
-  const particles = Array.from({ length: 20 }, (_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: Math.random() * 4 + 2,
-    duration: Math.random() * 10 + 10,
-    delay: Math.random() * 5,
-  }));
 
   return (
     <section ref={sectionRef} className="relative h-screen w-full flex items-center justify-center overflow-hidden">
