@@ -4,6 +4,7 @@ import "./globals.css";
 import Preloader from "@/components/dom/Preloader";
 import CustomCursor from "@/components/dom/CustomCursor";
 import PageTransition from "@/components/dom/PageTransition";
+import NoiseBackground from "@/components/dom/NoiseBackground";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <NoiseBackground />
         <PageTransition />
         <Preloader />
         <CustomCursor />

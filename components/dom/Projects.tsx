@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform, AnimatePresence, useMotionValue, useSp
 import { useRef, useState } from 'react';
 import { X, ExternalLink, Github, MonitorPlay } from 'lucide-react';
 import { stopLenis, startLenis } from './SmoothScroll';
+import HolographicCard from './HolographicCard';
 
 const projects = [
   {
@@ -253,6 +254,7 @@ export default function Projects({ onOpen, onClose }: { onOpen?: () => void, onC
                     <div className={`w-full h-[400px] rounded-3xl bg-gradient-to-br ${selectedProject.color} opacity-20 mb-12 relative overflow-hidden group`}>
                         <div className="absolute inset-0 flex items-center justify-center">
                           <button 
+                            onClick={() => window.open(selectedProject.demoUrl, '_blank')}
                             className="px-8 py-4 rounded-full bg-white text-black font-bold flex items-center gap-2 hover:scale-105 transition-transform"
                           >
                             <MonitorPlay size={20} />

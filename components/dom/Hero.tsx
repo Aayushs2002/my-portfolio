@@ -6,6 +6,9 @@ import Scene from '@/components/canvas/Scene';
 import Hero3D from '@/components/canvas/Hero3D';
 import Background from '@/components/canvas/Background';
 import { ArrowRight, Sparkles, Code, Zap } from 'lucide-react';
+import TextScramble from './TextScramble';
+import GlitchText from './GlitchText';
+import MagneticButton from './MagneticButton';
 
 export default function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -165,34 +168,21 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 2.5 }}
             className="text-6xl font-bold tracking-tighter sm:text-8xl mb-4"
           >
-            <motion.span
-              className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-[length:200%_auto]"
-              animate={{
-                backgroundPosition: ["0% center", "200% center"],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-            >
-              Creative
-            </motion.span>
+            <TextScramble 
+              text="Creative"
+              className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-pink-200"
+            />
             <br />
-            <motion.span 
+            <GlitchText 
+              text="Developer"
               className="text-white/60 inline-flex items-center gap-4"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 2.7 }}
+            />
+            <motion.span
+              animate={{ rotate: [0, 360] }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="inline-block ml-4"
             >
-              Developer
-              <motion.span
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="inline-block"
-              >
-                <Code className="text-purple-400" size={40} />
-              </motion.span>
+              <Code className="text-purple-400" size={40} />
             </motion.span>
           </motion.h1>
 
@@ -213,11 +203,9 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 2.9 }}
             className="mt-8 flex gap-4"
           >
-            <motion.a 
+            <MagneticButton 
               href="#projects" 
               className="group px-8 py-4 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium relative overflow-hidden shadow-lg shadow-purple-500/50"
-              whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(168, 85, 247, 0.4)" }}
-              whileTap={{ scale: 0.95 }}
             >
               <span className="relative z-10 flex items-center gap-2">
                 View Work
@@ -234,18 +222,16 @@ export default function Hero() {
                 whileHover={{ x: 0 }}
                 transition={{ duration: 0.3 }}
               />
-            </motion.a>
-            <motion.a 
+            </MagneticButton>
+            <MagneticButton 
               href="#contact" 
               className="group px-8 py-4 rounded-full border-2 border-purple-500/50 text-white font-medium hover:bg-purple-500/10 transition-all backdrop-blur-sm relative overflow-hidden"
-              whileHover={{ scale: 1.05, borderColor: "rgba(168, 85, 247, 1)" }}
-              whileTap={{ scale: 0.95 }}
             >
               <span className="relative z-10 flex items-center gap-2">
                 Contact Me
                 <Zap size={16} className="text-purple-400" />
               </span>
-            </motion.a>
+            </MagneticButton>
           </motion.div>
 
           {/* Scroll indicator with enhanced animation */}
