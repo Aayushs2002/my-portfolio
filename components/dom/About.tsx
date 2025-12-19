@@ -51,16 +51,17 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="space-y-6 text-lg text-zinc-400 leading-relaxed"
             >
-              <p>
-                I&apos;m a passionate developer who bridges the gap between design and engineering. 
-                With a keen eye for detail and a love for clean code, I build digital products 
-                that look great and perform even better.
-              </p>
-              <p>
-                My journey started with simple HTML pages and has evolved into building complex 
-                3D web applications. I believe in continuous learning and pushing the boundaries 
-                of what&apos;s possible on the web.
-              </p>
+         <p>
+  I'm a passionate full-stack developer who enjoys bringing ideas to life through thoughtful design 
+  and solid engineering. With a strong focus on detail and clean, maintainable code, I build digital 
+  experiences that are both intuitive and high-performing.
+</p>
+<p>
+  My journey began with simple HTML experiments and has grown into creating scalable applications 
+  across the full stack. I’m driven by continuous learning, exploring new technologies, and pushing 
+  the limits of what modern web development can achieve.
+</p>
+
             </motion.div>
 
             {/* Stats Grid */}

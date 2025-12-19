@@ -19,18 +19,18 @@ export default function Hero3D() {
     <>
       <PerspectiveCamera makeDefault position={[0, 0, 5]} />
       <Environment preset="city" />
-      
+
       <Float
-        speed={2} 
-        rotationIntensity={1} 
+        speed={2}
+        rotationIntensity={1}
         floatIntensity={2}
       >
         {/* Positioned to the right for split layout */}
         <mesh ref={meshRef} position={[2, 0, 0]} scale={1.8}>
           <icosahedronGeometry args={[1, 1]} />
-          <meshStandardMaterial 
-            color="#8b5cf6" 
-            roughness={0.1} 
+          <meshStandardMaterial
+            color="#8b5cf6"
+            roughness={0.1}
             metalness={0.8}
             wireframe
           />

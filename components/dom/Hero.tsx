@@ -22,7 +22,7 @@ export default function Hero() {
     delay: number;
   }>>([]);
   const sectionRef = useRef(null);
-  
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"]
@@ -31,7 +31,7 @@ export default function Hero() {
   const y1 = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const y2 = useTransform(scrollYProgress, [0, 1], [0, -150]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  
+
   useEffect(() => {
     // Set initial dimensions
     if (typeof window !== 'undefined') {
@@ -60,7 +60,7 @@ export default function Hero() {
 
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('resize', handleResize);
-    
+
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('resize', handleResize);
@@ -134,14 +134,14 @@ export default function Hero() {
       />
 
       <div className="container relative z-10 mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center pointer-events-none">
-        
+
         {/* Left Column: Text Content */}
-        <motion.div 
+        <motion.div
           className="text-left pointer-events-auto"
           style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
         >
           {/* Animated badge */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 2.3 }}
@@ -159,21 +159,21 @@ export default function Hero() {
               transition={{ duration: 2, repeat: Infinity }}
               className="w-2 h-2 bg-green-400 rounded-full"
             />
-          </motion.div>
+          </motion.div> */}
 
           {/* Title with enhanced gradient animation */}
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 2.5 }}
             className="text-6xl font-bold tracking-tighter sm:text-8xl mb-4"
           >
-            <TextScramble 
-              text="Creative"
+            <TextScramble
+              text="Full Stack"
               className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-pink-200"
             />
             <br />
-            <GlitchText 
+            <GlitchText
               text="Developer"
               className="text-white/60 inline-flex items-center gap-4"
             />
@@ -186,15 +186,16 @@ export default function Hero() {
             </motion.span>
           </motion.h1>
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 2.7 }}
             className="mt-6 text-xl text-zinc-400 max-w-lg leading-relaxed"
           >
-            I craft <span className="text-purple-400 font-semibold">immersive digital experiences</span> that blend art and technology. 
-            Specializing in <span className="text-pink-400 font-semibold">3D web applications</span>, interactive design, and 
-            performant frontend architecture.
+            I build <span className="text-purple-400 font-semibold">end-to-end digital solutions</span> that seamlessly connect user experience and engineering.
+            Specializing in <span className="text-pink-400 font-semibold">full-stack development</span>, scalable system design, and
+            robust, high-performance architectures.
+
           </motion.p>
 
           <motion.div
@@ -203,8 +204,8 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 2.9 }}
             className="mt-8 flex gap-4"
           >
-            <MagneticButton 
-              href="#projects" 
+            <MagneticButton
+              href="#projects"
               className="group px-8 py-4 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium relative overflow-hidden shadow-lg shadow-purple-500/50"
             >
               <span className="relative z-10 flex items-center gap-2">
@@ -223,8 +224,8 @@ export default function Hero() {
                 transition={{ duration: 0.3 }}
               />
             </MagneticButton>
-            <MagneticButton 
-              href="#contact" 
+            <MagneticButton
+              href="#contact"
               className="group px-8 py-4 rounded-full border-2 border-purple-500/50 text-white font-medium hover:bg-purple-500/10 transition-all backdrop-blur-sm relative overflow-hidden"
             >
               <span className="relative z-10 flex items-center gap-2">
@@ -246,7 +247,7 @@ export default function Hero() {
               transition={{ duration: 1.5, repeat: Infinity }}
               className="w-6 h-10 rounded-full border-2 border-purple-500/30 flex items-start justify-center p-2"
             >
-              <motion.div 
+              <motion.div
                 className="w-1.5 h-3 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full"
                 animate={{ y: [0, 12, 0], opacity: [1, 0.3, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
@@ -258,7 +259,7 @@ export default function Hero() {
 
         {/* Right Column: Placeholder for 3D alignment */}
         <div className="hidden md:block"></div>
-        
+
       </div>
     </section>
   );

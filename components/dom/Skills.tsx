@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { 
   Code2, Globe, Palette, Database, Server, 
-  Layout, Terminal, GitBranch, Box, Layers, Zap 
+  Layout, Terminal, GitBranch, Box, Layers, Zap, 
 } from 'lucide-react';
 
 const skillCategories = [
@@ -24,6 +24,8 @@ const skillCategories = [
       { name: "PostgreSQL", icon: Database, color: "#336791" },
       { name: "Prisma", icon: Layers, color: "#2D3748" },
       { name: "GraphQL", icon: Layout, color: "#E10098" },
+      { name: "Express.js", icon: Terminal, color: "#FCC624" },
+      { name: "Laravel", icon:  Server, color: "#E10098" },
     ]
   },
   {

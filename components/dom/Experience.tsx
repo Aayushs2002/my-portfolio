@@ -6,26 +6,26 @@ import { Briefcase, Calendar, MapPin } from 'lucide-react';
 
 const experiences = [
   {
-    title: "Senior Frontend Developer",
-    company: "Tech Innovations Inc.",
-    location: "San Francisco, CA",
-    period: "2023 - Present",
+    title: "Full Stack Developer",
+    company: "Omway Technologies Pvt. Ltd.",
+    location: "Buddhanagar,Kathmandu",
+    period: "2024 - Present",
     description: "Leading the frontend team in building scalable web applications using Next.js and Micro-frontends architecture. Improved site performance by 40%."
   },
   {
     title: "Full Stack Developer",
-    company: "Creative Solutions Ltd.",
-    location: "New York, NY",
-    period: "2021 - 2023",
+    company: "Softsaro Pvt. Ltd.",
+    location: "Maitighar,Kathmandu",
+    period: "2022 - 2024",
     description: "Developed and maintained multiple client projects. Integrated 3D elements using Three.js and optimized backend APIs with Node.js."
   },
-  {
-    title: "Junior Web Developer",
-    company: "Digital Agency",
-    location: "Remote",
-    period: "2020 - 2021",
-    description: "Collaborated with designers to implement responsive UI/UX. Gained expertise in React ecosystem and modern CSS frameworks."
-  }
+  // {
+  //   title: "Junior Web Developer",
+  //   company: "Digital Agency",
+  //   location: "Remote",
+  //   period: "2020 - 2021",
+  //   description: "Collaborated with designers to implement responsive UI/UX. Gained expertise in React ecosystem and modern CSS frameworks."
+  // }
 ];
 
 export default function Experience() {
